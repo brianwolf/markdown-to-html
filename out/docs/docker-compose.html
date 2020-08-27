@@ -1,0 +1,34 @@
+<p><link rel="stylesheet" type="text/css" href="css/github.css" media="all" /></p>
+
+<h1>:whale: Instalacion con Docker-compose</h1>
+
+<blockquote>
+  <p>El <strong>docker-compose.yml</strong> se encuentra en la carpeta <strong>docker</strong></p>
+</blockquote>
+
+<p><img src="img/docker-compose.svg" alt="alt text" /></p>
+
+<h2>Correr la imagen local</h2>
+
+<ul>
+<li>Ejecutar el script: <code>./sctipts/compose/up.sh</code></li>
+</ul>
+
+<p>Para parar la imagen ejecutar el script: <code>./sctipts/compose/down.sh</code>
+Los scripts solo ejecutan <em>docker-compose -f <docker-compose.yml></em></p>
+
+<h2>Puertos</h2>
+
+<ul>
+<li><strong>5000</strong>: api web de la aplicación</li>
+</ul>
+
+<h2>Volumes</h2>
+
+<ul>
+<li><strong>json-reportes-back/produces</strong>: Contiene los archivos generados por la aplicacion</li>
+</ul>
+
+<hr />
+
+<p><a href="../README.html">Volver al readme principal</a></p>

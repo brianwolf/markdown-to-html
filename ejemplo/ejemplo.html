@@ -1,0 +1,94 @@
+<link rel="stylesheet" type="text/css" href="estilo.css" media="all" />
+
+<h1>:card<em>index</em>dividers: json-reportes-back</h1>
+
+<blockquote>
+  <p>Servicio para convertir datos en <em>json</em> a un template customizable para generar <em>reportes</em>, por ahora solo genera pdfs y markdown</p>
+</blockquote>
+
+<p><img src="../docs/img/reports.gif" alt="alt text" /></p>
+
+<h2>:zap: Instalacion Rapida</h2>
+
+<ul>
+<li>Ejecutar <code>docker-compose up</code></li>
+</ul>
+
+<h2>:tada: Uso</h2>
+
+<ul>
+<li>Para ver si todo esta funcionando entrar con el navegador a la url <a href="http://localhost:5000/">http://localhost:5000/</a>, tambien se puede hacer un curl a <a href="http://localhost:5000/vivo">http://localhost:5000/vivo</a></li>
+</ul>
+
+<p>A falta de un front se deja una <strong>coleccion de Postman</strong> ubicado en: <code>postman/json_reportes.postman_collection.json</code></p>
+
+<p><strong>Se deja como ejemplo</strong> un <em>template html con css</em>, otro con <em>md</em> y un <em>json de datos</em> en la carpeta <code>/src/ejemplo_template/</code></p>
+
+<hr />
+
+<h2>:open_book: Documentacion adicional</h2>
+
+<ul>
+<li><a href="docs/docker-compose.md">Instalacion con Docker-Compose</a> <em>(recomendado)</em></li>
+<li><a href="docs/docker.md">Instalacion con Docker</a></li>
+<li><a href="docs/python.md">Instalacion con Python</a></li>
+</ul>
+
+<hr />
+
+<h2>:scroll: Scripts</h2>
+
+<p>Se dejan scripts para facilitar el manejo del proyecto, la cual contiene scripts para docker, heroku, python, etc.
+Para ejecutarlos hay que pararse en la ruta raiz del proyecto y llamar el script desde ahi, ejemplo:
+<code>./scripts/docker/build.sh</code></p>
+
+<h2>:package: Despliegue</h2>
+
+<p>La aplicacion se despliega de forma automatica utilizando <em>CircleCI</em> cada vez que se realiza un merge a la rama <em>master</em>,
+para ello utiliza los scripts dentro de la carpeta <code>scripts/</code>, es decir que ejecutar los scripts manualmente es similar a lo que ejecutan las tasks dentro de los jobs del pipeline de circleci</p>
+
+<p>Este despliegue consiste en:</p>
+
+<p><strong>Docker</strong>:</p>
+
+<ul>
+<li>Construir una nueva imagen de docker</li>
+<li>Crear un tag para la imagen con la version acortada del commit de <em>github</em></li>
+<li>Subir la imagen a <em>docker hub</em></li>
+<li>Actualizar la version <em>latest</em> existente en docker hub a esta ultima</li>
+</ul>
+
+<p><strong>Heroku</strong>:</p>
+
+<ul>
+<li>Construir una imagen de docker espificamente para <em>heroku</em></li>
+<li>Subir la imagen creada al registry de heroku</li>
+<li>Desplegar la imagen generada</li>
+</ul>
+
+<h2>:money<em>with</em>wings: Heroku</h2>
+
+<ul>
+<li>Ingresar <a href="https://json-reportes-back-heroku.herokuapp.com/">aqui</a> para probar la aplicacion.</li>
+<li>Al agregarle <code>/variables</code> al final de la URL se puede observar la <em>version</em> desplegada
+en el atributo del json respuesta <code>version</code></li>
+</ul>
+
+<h2>:earth_americas: Paginas</h2>
+
+<ul>
+<li><a href="https://hub.docker.com/_/python">Docker Hub Python</a></li>
+<li><a href="https://circleci.com/">CircleCI</a></li>
+<li><a href="https://github.com/ikatyang/emoji-cheat-sheet">Emoticones del Readme</a></li>
+</ul>
+
+<h2>:grin: Autor</h2>
+
+<blockquote>
+  <p><strong>Brian Lobo</strong></p>
+</blockquote>
+
+<ul>
+<li>Github: <a href="https://github.com/brianwolf">brianwolf</a></li>
+<li>Docker Hub:  <a href="https://hub.docker.com/u/brianwolf94">brianwolf94</a></li>
+</ul>
